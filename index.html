@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pemesanan Menu Makanan via WhatsApp</title>
+
+<style>
+
+    
+    body {
+        background: linear-gradient(45deg, #c2bfbb, #fad0c4);
+        color: #ddc1eb; /* Tomato */
+
+        background-color: #3498db; /* Belize Hole */
+color: #ffffff; /* Putih */
+
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+    header {
+         background-color: #3498db;
+         color: #fff;
+         padding: 20px 0;
+    }
+
+    .container {
+        max-width: 1300px;
+        margin: auto;
+        background-color: hsl(12, 9%, 90%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    h2 {
+  color: #FF5733; /* Warna judul H2, contoh: oranye */
+  text-align: center; /* Membuat teks H2 menjadi rata tengah */
+}
+
+.text-rata-tengah {
+  text-align: center; /* Membuat teks menjadi rata tengah */
+}
+
+    .menu-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .menu-item label {
+        flex: 1;
+        color: #333;
+    }
+    .menu-item select {
+        flex: 2;
+        padding: 5px;
+    }
+    .menu-item input {
+        flex: 1;
+        padding: 3px;
+    }
+    .btn-submit {
+        display: block;
+        width: 100%;
+        padding: 20px;
+        margin-top: 20px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    footer {
+         background-color: hsl(210, 1%, 47%);
+         color: #fff;
+         text-align: center;
+         padding:20px;
+    }
+    .image-gallery {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .image-gallery img {
+        max-width: 47%;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>ZAHIRUL MA'ALA </h1><br>
+    <section class="featured">
+        <div class="container">
+            <h2>PRE-ORDER NOW <!DOCTYPE html></h2>
+            <div class="image-gallery">
+                <img src="image1.jpg" alt="Gambar 1">
+                <img src="image_3.jpg" alt="Gambar 2">
+            </div>
+        </div>
+    </section>
+
+    <form id="orderForm">
+        <div class="menu-item">
+            <label for="menu1">Menu 1:</label>
+            <select name="menu1" id="menu1">
+                <option value="0" disabled selected>Pilih Menu 1</option>
+                <option value="17">Nasi Kulit Krispi 17k</option>
+                <option value="17">Nasi Telur Krispi 17k</option> 
+                <option value="18">Nasi Ayam Geprek 18k</option>
+                <option value="14">Nasi Uduk Telur 14k</option>
+                <option value="14">Nasi Uduk Tahu 14k</option>
+                <option value="8">Nasi kepal 8k</option>
+                <option value="13">Bakso Korea 13k</option>
+                <option value="17">Mercon Seger 17k</option>
+                <option value="15">Asinan Buah 15k</option>
+            </select>
+                <button type="button" onclick="cancelMenu('menu1')">Batal</button>
+        </div>
+        <div class="menu-item">
+            <label for="menu2">Menu 2:</label>
+            <select name="menu2" id="menu2">
+                <option value="0" disabled selected>Pilih Menu 2</option>
+                <option value="12">Piscok Lumer 4pcs 12k</option>
+                <option value="12">Martabak Telur 12k</option>
+                <option value="12">Martabak Tahu 12k</option>
+                <option value="7">Es Teh Jumbo {cup/botol} 7k</option>
+                <option value="7">Es Lemon Tea 7k</option>
+                <option value="8">Es Thai Tea 8k</option>
+                <option value="8">Es Matcha 8k</option>
+                <option value="4">Es Kul-kul Buah/pcs 4k</option>
+                <option value="8">Es Bubblegum 8k</option>
+            </select>
+            <button type="button" onclick="cancelMenu('menu2')">Batal</button>
+        </div>
+        <div class="menu-item">
+            <label for="menu3">Menu 3:</label>
+            <select name="menu3" id="menu3">
+                <option value="0" disabled selected>Pilih Menu 3</option>
+                <option value="35">Nastar 35k</option>
+                <option value="22">Sambal Cumi 22k</option>
+                <option value="22">Sambal Ayam 22k</option>
+                <option value="15">Risol Ayam 15k</option>
+                <option value="14">Kacang Mede 14k</option>
+                <option value="10">Cipol [Cilok Nampol 10k]</option>
+                <option value="10">Bakso Kuah 10k</option>
+                <option value="8">Otak-otak 8k</option>   
+        </div>
+            </select>
+            <button type="button" onclick="cancelMenu('menu3')">Batal</button>
+        </div>
+        <div class="menu-item">
+            <label for="quantity1">Jumlah Menu 1:</label>
+            <input type="number" id="quantity1" name="quantity1" min="0" value="0">
+            
+        
+        </div>
+        <div class="menu-item">
+            <label for="quantity2">Jumlah Menu 2:</label>
+            <input type="number" id="quantity2" name="quantity2" min="0" value="0">
+            
+        
+        </div>
+        <div class="menu-item">
+            <label for="quantity3">Jumlah Menu 3:</label>
+            <input type="number" id="quantity3" name="quantity3" min="0" value="0">
+            
+        
+        </div>
+        <div class="menu-item">
+            <label for="total">Total Harga:</label>
+            <input type="text" id="total" name="total" readonly>
+        </div>
+        <button type="button" class="btn-submit" onclick="calculateTotal()">Hitung Total</button>
+        <!-- Tombol untuk menghitung total harga -->
+
+
+        <h2>Metode Pembayaran</h2>
+        <p>Silakan pilih metode pembayaran yang tersedia:</p>
+        <ul>
+            <li>DANA-OVO-GoPay : 081225858050</li>
+            <li>Bank Jago : Nomor Rekening: 508489581079 (Findi Kristiana Dewi S)</li>
+            <li>Bank BNI : Nomor Rekening: 1764437171 (Findi Kristiana Dewi S)</li>
+        </ul>
+        <p>Silakan transfer ke salah satu nomor rekening di atas. Setelah melakukan pembayaran, mohon konfirmasi melalui WhatsApp dengan menyertakan bukti transfer dan nomor pesanan Anda. Terima kasih atas pembeliannya!</p>
+            
+        <div class="menu-item">
+            <label for="nama">Nama Pembeli    :</label>
+            <input type="text" id="nama" name="nama">
+        </div>
+        <div class="menu-item">
+            <label for="alamat">Alamat Pembeli:</label>
+            <input type="text" id="alamat" name="alamat">
+        </div>
+        <button type="button" class="btn-submit" onclick="sendWhatsAppMessage()">Pesan via WhatsApp</button>
+        
+    </form>
+</div>
+<footer>
+    <p>&copy; 2024 ZAHIRUL MA'ALA </p>
+</footer>
+<script>
+    function cancelMenu(menuId) {
+    // Mengatur pilihan menu kembali ke opsi default
+    document.getElementById(menuId).selectedIndex = 0;
+
+    // Mengosongkan nilai input jumlah menu
+    document.getElementById(menuId + "_quantity").value = "";
+}
+
+function calculateTotal() {
+    var menu1Price = parseInt(document.getElementById("menu1").value);
+    var menu2Price = parseInt(document.getElementById("menu2").value);
+    var menu3Price = parseInt(document.getElementById("menu3").value);
+    var quantity1 = parseInt(document.getElementById("quantity1").value);
+    var quantity2 = parseInt(document.getElementById("quantity2").value);
+    var quantity3 = parseInt(document.getElementById("quantity3").value);
+
+    // Menghitung total harga untuk setiap menu
+    var totalMenu1 = menu1Price * quantity1;
+    var totalMenu2 = menu2Price * quantity2;
+    var totalMenu3 = menu3Price * quantity3;
+
+    // Menjumlahkan total harga dari semua menu
+    var total = totalMenu1 + totalMenu2 + totalMenu3;
+    
+    // Menampilkan total harga di elemen input
+    document.getElementById("total").value = total + "k";
+}
+
+function sendWhatsAppMessage() {
+    var form = document.getElementById("orderForm");
+    var menu1 = form.elements["menu1"].options[form.elements["menu1"].selectedIndex].text;
+    var menu2 = form.elements["menu2"].options[form.elements["menu2"].selectedIndex].text;
+    var menu3 = form.elements["menu3"].options[form.elements["menu3"].selectedIndex].text;
+    var quantity1 = form.elements["quantity1"].value;
+    var quantity2 = form.elements["quantity2"].value;
+    var quantity3 = form.elements["quantity3"].value;
+    var total = document.getElementById("total").value;
+    var namaPembeli = form.elements["nama"].value;
+    var alamat = form.elements["alamat"].value;
+
+    var message = "Terima kasih atas pesanan Anda, " + namaPembeli + "!\n\n" +
+                  "Berikut detail pesanan Anda:\n" +
+                  "Menu 1: " + menu1 + " (Jumlah: " + quantity1 + ")\n" +
+                  "Menu 2: " + menu2 + " (Jumlah: " + quantity2 + ")\n" +
+                  "Menu 3: " + menu3 + " (Jumlah: " + quantity3 + ")\n" +
+                  "Total Harga: " + total + "\n\n" +
+                  "Alamat pengiriman: " + alamat + "\n\n" +
+                  "Pesanan Anda akan segera kami proses.";
+
+    var phoneNumber = "6281225858050"; // Ganti dengan nomor WhatsApp Anda
+    var url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+    
+    window.open(url, '_blank');
+    function cancelOrder() {
+    var confirmation = confirm("Apakah Anda yakin ingin membatalkan pesanan?");
+    if (confirmation) {
+        document.getElementById("orderForm").reset();
+        alert("Pesanan Anda telah dibatalkan.");
+    }
+}
+
+function cancelMenu(menuId) {
+    document.getElementById(menuId).selectedIndex = 0; // Mengatur pilihan menu kembali ke opsi default
+    document.getElementById(menuId + "_quantity").value = ""; // Mengosongkan input jumlah menu
+}
+
+}
+</script>
+</body>
+</html>
